@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "ShootingGame_CPP/ShootingGame_CPPGameMode.h"
+#include "ShootingGame_CPP/public/ShootingGame_CPPGameMode.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -42,7 +42,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPGameMode() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootingGame_CPPGameMode_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "ShootingGame_CPPGameMode.h" },
-		{ "ModuleRelativePath", "ShootingGame_CPPGameMode.h" },
+		{ "ModuleRelativePath", "public/ShootingGame_CPPGameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShootingGame_CPPGameMode, 3388323560);
+	IMPLEMENT_CLASS(AShootingGame_CPPGameMode, 620963495);
 	template<> SHOOTINGGAME_CPP_API UClass* StaticClass<AShootingGame_CPPGameMode>()
 	{
 		return AShootingGame_CPPGameMode::StaticClass();

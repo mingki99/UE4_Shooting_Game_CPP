@@ -7,7 +7,10 @@
 		{
 			"Name": "ShootingGame_CPP",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	]
 }

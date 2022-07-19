@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "ShootingGame_CPP/ShootingGame_CPPCharacter.h"
+#include "ShootingGame_CPP/public/ShootingGame_CPPCharacter.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -61,7 +61,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPCharacter() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootingGame_CPPCharacter_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "ShootingGame_CPPCharacter.h" },
-		{ "ModuleRelativePath", "ShootingGame_CPPCharacter.h" },
+		{ "ModuleRelativePath", "public/ShootingGame_CPPCharacter.h" },
 	};
 #endif
 #if WITH_METADATA
@@ -70,7 +70,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPCharacter() {}
 		{ "Category", "Camera" },
 		{ "Comment", "/** Camera boom positioning the camera behind the character */" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "ShootingGame_CPPCharacter.h" },
+		{ "ModuleRelativePath", "public/ShootingGame_CPPCharacter.h" },
 		{ "ToolTip", "Camera boom positioning the camera behind the character" },
 	};
 #endif
@@ -81,7 +81,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPCharacter() {}
 		{ "Category", "Camera" },
 		{ "Comment", "/** Follow camera */" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "ShootingGame_CPPCharacter.h" },
+		{ "ModuleRelativePath", "public/ShootingGame_CPPCharacter.h" },
 		{ "ToolTip", "Follow camera" },
 	};
 #endif
@@ -90,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPCharacter() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootingGame_CPPCharacter_Statics::NewProp_BaseTurnRate_MetaData[] = {
 		{ "Category", "Camera" },
 		{ "Comment", "/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */" },
-		{ "ModuleRelativePath", "ShootingGame_CPPCharacter.h" },
+		{ "ModuleRelativePath", "public/ShootingGame_CPPCharacter.h" },
 		{ "ToolTip", "Base turn rate, in deg/sec. Other scaling may affect final turn rate." },
 	};
 #endif
@@ -99,7 +99,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPCharacter() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootingGame_CPPCharacter_Statics::NewProp_BaseLookUpRate_MetaData[] = {
 		{ "Category", "Camera" },
 		{ "Comment", "/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */" },
-		{ "ModuleRelativePath", "ShootingGame_CPPCharacter.h" },
+		{ "ModuleRelativePath", "public/ShootingGame_CPPCharacter.h" },
 		{ "ToolTip", "Base look up/down rate, in deg/sec. Other scaling may affect final rate." },
 	};
 #endif
@@ -137,7 +137,7 @@ void EmptyLinkFunctionForGeneratedCodeShootingGame_CPPCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShootingGame_CPPCharacter, 3348057465);
+	IMPLEMENT_CLASS(AShootingGame_CPPCharacter, 1122789090);
 	template<> SHOOTINGGAME_CPP_API UClass* StaticClass<AShootingGame_CPPCharacter>()
 	{
 		return AShootingGame_CPPCharacter::StaticClass();
