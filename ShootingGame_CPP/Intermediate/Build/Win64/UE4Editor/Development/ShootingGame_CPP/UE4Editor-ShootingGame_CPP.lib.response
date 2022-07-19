@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-ShootingGame_CPP.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\ShootingGame_CPPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\ShootingGame_CPP.cpp.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\ShootingGame_CPPCharacter.cpp.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\ShootingGame_CPPGameMode.cpp.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\ShootingGame_CPP.init.gen.cpp.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\ShootingGame_CPPCharacter.gen.cpp.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\ShootingGame_CPPGameMode.gen.cpp.obj"
+"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\Default.rc2.res"
+/OUT:"D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\UE4Editor-ShootingGame_CPP.lib"

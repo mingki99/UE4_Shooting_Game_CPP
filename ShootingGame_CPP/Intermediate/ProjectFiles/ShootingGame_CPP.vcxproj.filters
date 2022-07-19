@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ShootingGame_CPP.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{74C01862-8CFE-4B7E-B905-99BB676E73CA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ShootingGame_CPP.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ShootingGame_CPPEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{59E4417D-A5D9-44AC-A129-3E031594ADE4}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ShootingGame_CPP">
+      <UniqueIdentifier>{E8040F82-B062-477A-9EA1-FC1BFECA3AB9}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPP.Build.cs">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPP.cpp">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPP.h">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPPCharacter.cpp">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPPCharacter.h">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPPGameMode.cpp">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPPGameMode.h">
+      <Filter>Source\ShootingGame_CPP</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

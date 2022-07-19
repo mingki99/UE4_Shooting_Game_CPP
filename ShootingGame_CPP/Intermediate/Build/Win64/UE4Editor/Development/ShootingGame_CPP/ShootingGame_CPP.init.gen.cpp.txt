@@ -1,0 +1,3 @@
+D:\File\UE4_Shooting_Game_CPP\ShootingGame_CPP\Intermediate\Build\Win64\UE4Editor\Development\ShootingGame_CPP\Definitions.ShootingGame_CPP.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
