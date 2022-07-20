@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\ShootingGame_CPP.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{66044437-D49B-4E8A-B3DC-5E5F3DB7CD34}</UniqueIdentifier>
+      <UniqueIdentifier>{9D6F0C2B-85C5-4A12-A824-235B64D650B3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ShootingGame_CPP.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{259B8E24-31E9-48DB-950B-123A6B463417}</UniqueIdentifier>
+      <UniqueIdentifier>{DA4C20D7-A058-484C-8BA5-493AB1B133F7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,14 +30,17 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\ShootingGame_CPP">
-      <UniqueIdentifier>{4BEF5D96-7633-4CE0-9133-A7F44E6D2DDE}</UniqueIdentifier>
+      <UniqueIdentifier>{88FB9040-B70A-4F72-BDE1-FD0F7D3EDF64}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ShootingGame_CPP\ShootingGame_CPP.Build.cs">
       <Filter>Source\ShootingGame_CPP</Filter>
     </None>
     <Filter Include="Source\ShootingGame_CPP\private">
-      <UniqueIdentifier>{5D3508DC-7A43-40E5-B54E-EEAAD4E308D6}</UniqueIdentifier>
+      <UniqueIdentifier>{E1A79D10-40A0-487A-8986-7A7EE33B3066}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\ShootingGame_CPP\private\ABAnimInstance.cpp">
+      <Filter>Source\ShootingGame_CPP\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShootingGame_CPP\private\ABCharacter.cpp">
       <Filter>Source\ShootingGame_CPP\private</Filter>
     </ClCompile>
@@ -60,8 +63,11 @@
       <Filter>Source\ShootingGame_CPP\private</Filter>
     </ClCompile>
     <Filter Include="Source\ShootingGame_CPP\public">
-      <UniqueIdentifier>{98DF630C-3BC4-4557-98E5-A6AAAF912A44}</UniqueIdentifier>
+      <UniqueIdentifier>{8CD6039E-30B5-47F6-A46E-9843BB2BD829}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\ShootingGame_CPP\public\ABAnimInstance.h">
+      <Filter>Source\ShootingGame_CPP\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShootingGame_CPP\public\ABCharacter.h">
       <Filter>Source\ShootingGame_CPP\public</Filter>
     </ClInclude>

@@ -58,7 +58,10 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AABCharacter)
 
 
-#define ShootingGame_CPP_Source_ShootingGame_CPP_public_ABCharacter_h_12_PRIVATE_PROPERTY_OFFSET
+#define ShootingGame_CPP_Source_ShootingGame_CPP_public_ABCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ABAnim() { return STRUCT_OFFSET(AABCharacter, ABAnim); }
+
+
 #define ShootingGame_CPP_Source_ShootingGame_CPP_public_ABCharacter_h_9_PROLOG
 #define ShootingGame_CPP_Source_ShootingGame_CPP_public_ABCharacter_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

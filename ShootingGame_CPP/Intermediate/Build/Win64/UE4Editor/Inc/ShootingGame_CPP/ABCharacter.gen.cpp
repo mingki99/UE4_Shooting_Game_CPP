@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeABCharacter() {}
 	SHOOTINGGAME_CPP_API UClass* Z_Construct_UClass_AABCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_ShootingGame_CPP();
+	SHOOTINGGAME_CPP_API UClass* Z_Construct_UClass_UABAnimInstance_NoRegister();
 // End Cross Module References
 	void AABCharacter::StaticRegisterNativesAABCharacter()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeABCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ABAnim_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ABAnim;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +51,15 @@ void EmptyLinkFunctionForGeneratedCodeABCharacter() {}
 		{ "ModuleRelativePath", "public/ABCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AABCharacter_Statics::NewProp_ABAnim_MetaData[] = {
+		{ "ModuleRelativePath", "public/ABCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AABCharacter_Statics::NewProp_ABAnim = { "ABAnim", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AABCharacter, ABAnim), Z_Construct_UClass_UABAnimInstance_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AABCharacter_Statics::NewProp_ABAnim_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AABCharacter_Statics::NewProp_ABAnim_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AABCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AABCharacter_Statics::NewProp_ABAnim,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AABCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AABCharacter>::IsAbstract,
 	};
@@ -54,11 +69,11 @@ void EmptyLinkFunctionForGeneratedCodeABCharacter() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_AABCharacter_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AABCharacter_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AABCharacter_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AABCharacter_Statics::Class_MetaDataParams))
@@ -72,7 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeABCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AABCharacter, 2506240098);
+	IMPLEMENT_CLASS(AABCharacter, 1104856524);
 	template<> SHOOTINGGAME_CPP_API UClass* StaticClass<AABCharacter>()
 	{
 		return AABCharacter::StaticClass();
