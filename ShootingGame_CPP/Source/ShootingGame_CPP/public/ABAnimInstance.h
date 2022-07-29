@@ -21,14 +21,30 @@ public:
 public:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
+	void SetEquip(bool IsEquip);
+
+public:
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
+	float fMoveForWardValueX;
+
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
+	float fMoveRightValueY;
+
 private:
 	
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
-	float Speed;
+	float fSpeed;
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
-	bool IsInAir;
+	float fDirection;
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
-	float Direction;
+	bool bIsInAir;
+
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
+	bool bIsEquip;
+
+
+
+	
 };
