@@ -15,7 +15,7 @@ AShootingGame_CPPGameMode::AShootingGame_CPPGameMode()
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}*/
 
-	DefaultPawnClass = AABCharacter::StaticClass();
+	// DefaultPawnClass = AABCharacter::StaticClass();
 
 	PlayerControllerClass = AABPlayerController::StaticClass();
 

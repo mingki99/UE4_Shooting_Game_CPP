@@ -14,6 +14,7 @@ AWeapon::AWeapon()
 
 	RootComponent = Weapon;
 
+	// Weapon->SetRelativeRotation(FRotator(0.0f, 90.0f, 0.0f));
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_WEAPON (TEXT("/Game/A_ShootingGame/Mesh/Weapon/FPS_Weapon_Bundle/Weapons/Meshes/Ka47/SM_KA47_X.SM_KA47_X"));
 	if (SM_WEAPON.Succeeded())

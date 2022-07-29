@@ -19,6 +19,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void PostInitializeComponents() override;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -34,15 +36,33 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 	class UCameraComponent* Camera;
 
+	/*UPROPERTY(VisibleAnyWhere, Category = Weapon)
+	class UStaticMeshComponent* WeaponMesh;*/
+
+	
+
 private:
 	// InputComponent
+	
 	void MoveForward(float NewAxisValue);
 	void MoveRight(float NewAxisValue);
 
-	void UpDown(float NewAxisValue);
-	void LookUp(float NewAxisValue);
 
+	void LookUp(float NewAxisValue);
 	void Turn(float NewAxisValue);
+
+
+private:
+	
+	UPROPERTY()
+	class UABAnimInstance* ABAnim;
+
+public:
+
+	UPROPERTY(EditInstanceOnly, Category = Weapon)
+	TSubclassOf<class AWeapon> WeaponClass;
+
+
 
 	// UPROPERTY()
 };

@@ -5,9 +5,10 @@
 
 UABAnimInstance::UABAnimInstance()
 {
-	Speed = 0.0f;
-	Direction = 0.0f;
-	IsInAir = false;
+	fSpeed = 0.0f;
+	fDirection = 0.0f;
+	bIsInAir = false;
+	bIsEquip = false;
 }
 
 void UABAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -18,7 +19,15 @@ void UABAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	if (!::IsValid(Pawn)) return;
 	
 	
-	Speed = Pawn->GetVelocity().Size();
+	fSpeed = Pawn->GetVelocity().Size();
 
-	Direction = CalculateDirection(Pawn->GetVelocity(), Pawn->GetActorRotation());
+	fDirection = CalculateDirection(Pawn->GetVelocity(), Pawn->GetActorRotation());
+
+
+	bIsInAir = Pawn->GetMovementComponent()->IsFalling();
+}
+
+void UABAnimInstance::SetEquip(bool IsEquip)
+{
+	bIsEquip = IsEquip;
 }

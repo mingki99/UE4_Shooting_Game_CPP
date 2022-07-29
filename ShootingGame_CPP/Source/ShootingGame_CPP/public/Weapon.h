@@ -23,11 +23,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-protected:
+public:
 	
 	UPROPERTY()
 	int32 Damage;
 
-	UPROPERTY(VisibleAnyWhere, Category = MESH)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = MESH)
 	class UStaticMeshComponent* Weapon;
 };
