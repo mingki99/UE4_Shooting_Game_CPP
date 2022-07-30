@@ -6,7 +6,7 @@
 #include "ABAnimInstance.h"
 
 #include "Weapon.h"
-
+#include "DrawDebugHelpers.h"
 
 #include "Engine/EngineTypes.h"
 
@@ -75,28 +75,25 @@ void AABCharacter::BeginPlay()
 	Super::BeginPlay();
 	
 	
-
-	FActorSpawnParameters SpawnParmeters;
-
-	SpawnParmeters.Owner = this;
-
 	// 생성은 캐릭터가 해주면 안된다, 맵이나, 구조물이 소환해주는게 자연스럽다.
-	
+
+	FActorSpawnParameters ActorSpawnParameters;
+
+	CurrentWeapon = GetWorld()->SpawnActor<AWeapon>(WeaponClass, FVector::ZeroVector, FRotator::ZeroRotator);
+	ABCHECK(nullptr != CurrentWeapon);
+	CurrentWeapon->SetActorEnableCollision(false);
+
 	
 
-	auto GunWeapon = GetWorld()->SpawnActor<AWeapon>(WeaponClass, FVector::ZeroVector , FRotator::ZeroRotator, SpawnParmeters);
-	ABCHECK(nullptr != GunWeapon);
-
-	GunWeapon->SetActorEnableCollision(false);
 	
-
+	
+	
 	FName GunWeaponSoket(TEXT("WeponSocket"));
 
-	
 	FAttachmentTransformRules AttachmentTransformRules(EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, EAttachmentRule::KeepRelative, true);
 
-	GunWeapon->AttachToComponent(GetMesh(),  AttachmentTransformRules, GunWeaponSoket);
-
+	CurrentWeapon->AttachToComponent(GetMesh(),  AttachmentTransformRules, GunWeaponSoket);
+	CurrentWeapon->SetOwner(this);
 	
 }
 
@@ -125,6 +122,7 @@ void AABCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction(TEXT("ClickedLeft"), EInputEvent::IE_Pressed, this,  &AABCharacter::ClickedLeft);
 
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &AABCharacter::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &AABCharacter::MoveRight);
@@ -157,5 +155,30 @@ void AABCharacter::Turn(float NewAxisValue)
 {
 	AddControllerYawInput(NewAxisValue);
 	// ABLOG(Warning, TEXT("%f"), NewAxisValue);
-}	
+}
+
+void AABCharacter::ClickedLeft()
+{
+	FVector WeaponSocketTraceStart = CurrentWeapon->Weapon->GetSocketLocation(TEXT("Muzzle"));
+	FVector WeaponTraceEnd= WeaponSocketTraceStart + (CurrentWeapon->GetActorRotation().Vector().ForwardVector * 1000);
+	
+	FHitResult HitResult;
+	FCollisionObjectQueryParams CollisionObjectQueryParams;
+
+	GetWorld()->LineTraceSingleByObjectType(HitResult,WeaponSocketTraceStart, WeaponTraceEnd, FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)),false);
+
+	DrawDebugLine(GetWorld(), WeaponSocketTraceStart, WeaponTraceEnd, FColor::Green ,false, 5.0f  );
+
+}
+
+void AABCharacter::SpawnGunWeapon(Aweapon* Weapon)
+{
+	
+}
+
+void AABCharacter::SetWeapon(AWeapon* Weapon)
+{
+
+}
+
 
