@@ -51,16 +51,26 @@ private:
 	void LookUp(float NewAxisValue);
 	void Turn(float NewAxisValue);
 
+	void ClickedLeft();
 
-private:
+	void SpawnGunWeapon(class Aweapon* Weapon);
+	void SetWeapon(class AWeapon* Weapon);
+
+protected:
 	
 	UPROPERTY()
 	class UABAnimInstance* ABAnim;
+
+	UPROPERTY(BlueprintReadWrite, Category = Weapon)
+	class AWeapon* CurrentWeapon;
 
 public:
 
 	UPROPERTY(EditInstanceOnly, Category = Weapon)
 	TSubclassOf<class AWeapon> WeaponClass;
+
+	
+
 
 
 
