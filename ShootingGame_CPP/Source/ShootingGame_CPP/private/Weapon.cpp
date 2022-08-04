@@ -65,12 +65,7 @@ void AWeapon::OnCharacterOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 		if (GEngine)
 			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, TEXT("Overlap Character!!"));
 
-		
-
 	}
-	
-
-	
 	
 }
 

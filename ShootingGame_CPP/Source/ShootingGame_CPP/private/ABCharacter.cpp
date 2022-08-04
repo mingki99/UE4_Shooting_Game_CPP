@@ -167,7 +167,8 @@ void AABCharacter::ClickedLeft()
 		FCollisionObjectQueryParams CollisionObjectQueryParams;
 
 		
-		GetWorld()->LineTraceSingleByObjectType(HitResult, WeaponTraceStart, WeaponTraceEnd, FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)), false);
+		GetWorld()->LineTraceSingleByObjectType(HitResult, WeaponTraceStart, WeaponTraceEnd,
+		FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)), false);
 
 		DrawDebugLine(GetWorld(), WeaponTraceStart, WeaponTraceEnd, FColor::Green, false, 5.0f);
 
