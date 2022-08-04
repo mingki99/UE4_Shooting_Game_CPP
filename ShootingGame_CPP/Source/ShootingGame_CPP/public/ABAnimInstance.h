@@ -21,6 +21,7 @@ public:
 public:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
+	UFUNCTION()
 	void SetEquip(bool IsEquip);
 
 public:

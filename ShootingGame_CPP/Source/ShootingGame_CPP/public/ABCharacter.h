@@ -69,10 +69,6 @@ public:
 	UPROPERTY(EditInstanceOnly, Category = Weapon)
 	TSubclassOf<class AWeapon> WeaponClass;
 
-	
-
-
-
 
 	// UPROPERTY()
 };

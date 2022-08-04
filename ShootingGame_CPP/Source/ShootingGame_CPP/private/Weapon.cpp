@@ -3,6 +3,7 @@
 
 #include "Weapon.h"
 #include "Components/StaticMeshComponent.h"
+#include "ABCharacter.h"
 
 // Sets default values
 AWeapon::AWeapon()
@@ -13,6 +14,8 @@ AWeapon::AWeapon()
 	Weapon = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Weapon"));
 
 	RootComponent = Weapon;
+
+	Weapon->SetCollisionProfileName(TEXT("Item"));
 
 	// Weapon->SetRelativeRotation(FRotator(0.0f, 90.0f, 0.0f));
 
@@ -26,10 +29,20 @@ AWeapon::AWeapon()
 
 }
 
+
+
 // Called when the game starts or when spawned
 void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
+	
+}
+
+void AWeapon::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	Weapon->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnCharacterOverlap);
 	
 }
 
@@ -38,5 +51,26 @@ void AWeapon::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AWeapon::OnCharacterOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	ABLOG_S(Warning);
+
+	// 캐릭터 오버랩시 처리될 로직
+	if (GetWorld()->GetFirstPlayerController()->GetPawn() == OtherActor)
+	{
+		auto Character = Cast<AABCharacter>(OtherActor);
+
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, TEXT("Overlap Character!!"));
+
+		
+
+	}
+	
+
+	
+	
 }
 

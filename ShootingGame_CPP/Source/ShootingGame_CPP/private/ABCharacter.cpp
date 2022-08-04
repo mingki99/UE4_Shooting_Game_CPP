@@ -77,16 +77,12 @@ void AABCharacter::BeginPlay()
 	
 	// 생성은 캐릭터가 해주면 안된다, 맵이나, 구조물이 소환해주는게 자연스럽다.
 
-	FActorSpawnParameters ActorSpawnParameters;
+
 
 	CurrentWeapon = GetWorld()->SpawnActor<AWeapon>(WeaponClass, FVector::ZeroVector, FRotator::ZeroRotator);
 	ABCHECK(nullptr != CurrentWeapon);
 	CurrentWeapon->SetActorEnableCollision(false);
 
-	
-
-	
-	
 	
 	FName GunWeaponSoket(TEXT("WeponSocket"));
 
@@ -121,9 +117,11 @@ void AABCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	// Action
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction(TEXT("ClickedLeft"), EInputEvent::IE_Pressed, this,  &AABCharacter::ClickedLeft);
 
+	// Axis
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &AABCharacter::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &AABCharacter::MoveRight);
 
@@ -159,16 +157,22 @@ void AABCharacter::Turn(float NewAxisValue)
 
 void AABCharacter::ClickedLeft()
 {
-	FVector WeaponSocketTraceStart = CurrentWeapon->Weapon->GetSocketLocation(TEXT("Muzzle"));
-	FVector WeaponTraceEnd= WeaponSocketTraceStart + (CurrentWeapon->GetActorRotation().Vector().ForwardVector * 1000);
+	if (nullptr != CurrentWeapon)
+	{
+		// Weapon socket "Muzzle" 기준 라인트레이스 실행
+		FVector WeaponTraceStart = CurrentWeapon->Weapon->GetSocketLocation(TEXT("Muzzle"));
+		FVector WeaponTraceEnd = WeaponTraceStart + (CurrentWeapon->Weapon->GetSocketRotation(TEXT("Muzzle")).Vector() * 2000.0f);
+
+		FHitResult HitResult;
+		FCollisionObjectQueryParams CollisionObjectQueryParams;
+
+		
+		GetWorld()->LineTraceSingleByObjectType(HitResult, WeaponTraceStart, WeaponTraceEnd, FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)), false);
+
+		DrawDebugLine(GetWorld(), WeaponTraceStart, WeaponTraceEnd, FColor::Green, false, 5.0f);
+
+	}
 	
-	FHitResult HitResult;
-	FCollisionObjectQueryParams CollisionObjectQueryParams;
-
-	GetWorld()->LineTraceSingleByObjectType(HitResult,WeaponSocketTraceStart, WeaponTraceEnd, FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)),false);
-
-	DrawDebugLine(GetWorld(), WeaponSocketTraceStart, WeaponTraceEnd, FColor::Green ,false, 5.0f  );
-
 }
 
 void AABCharacter::SpawnGunWeapon(Aweapon* Weapon)
