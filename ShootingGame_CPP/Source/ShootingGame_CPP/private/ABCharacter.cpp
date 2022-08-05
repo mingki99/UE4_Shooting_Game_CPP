@@ -159,19 +159,22 @@ void AABCharacter::ClickedLeft()
 {
 	if (nullptr != CurrentWeapon)
 	{
-		if(ABAnim->GetIs)
-		// Weapon socket "Muzzle" 기준 라인트레이스 실행
-		FVector WeaponTraceStart = CurrentWeapon->Weapon->GetSocketLocation(TEXT("Muzzle"));
-		FVector WeaponTraceEnd = WeaponTraceStart + (CurrentWeapon->Weapon->GetSocketRotation(TEXT("Muzzle")).Vector() * 2000.0f);
+		if (!ABAnim->GetIsInAir())
+		{
+			// Weapon socket "Muzzle" 기준 라인트레이스 실행
+			FVector WeaponTraceStart = CurrentWeapon->Weapon->GetSocketLocation(TEXT("Muzzle"));
+			FVector WeaponTraceEnd = WeaponTraceStart + (CurrentWeapon->Weapon->GetSocketRotation(TEXT("Muzzle")).Vector() * 2000.0f);
 
-		FHitResult HitResult;
-		FCollisionObjectQueryParams CollisionObjectQueryParams;
+			FHitResult HitResult;
+			FCollisionObjectQueryParams CollisionObjectQueryParams;
 
-		
-		GetWorld()->LineTraceSingleByObjectType(HitResult, WeaponTraceStart, WeaponTraceEnd,
-		FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)), false);
 
-		DrawDebugLine(GetWorld(), WeaponTraceStart, WeaponTraceEnd, FColor::Green, false, 5.0f);
+			GetWorld()->LineTraceSingleByObjectType(HitResult, WeaponTraceStart, WeaponTraceEnd,
+				FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECC_WorldStatic) | ECC_TO_BITFIELD(ECC_WorldDynamic) | ECC_TO_BITFIELD(ECC_Pawn) | ECC_TO_BITFIELD(ECC_PhysicsBody)), false);
+
+			DrawDebugLine(GetWorld(), WeaponTraceStart, WeaponTraceEnd, FColor::Green, false, 5.0f);
+		}
+	
 
 	}
 	

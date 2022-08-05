@@ -57,7 +57,7 @@ void AWeapon::OnCharacterOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 {
 	ABLOG_S(Warning);
 
-	// 캐릭터 오버랩시 처리될 로직
+	// 캐릭터와 오버랩시 처리될 로직
 	if (GetWorld()->GetFirstPlayerController()->GetPawn() == OtherActor)
 	{
 		auto Character = Cast<AABCharacter>(OtherActor);
