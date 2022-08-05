@@ -159,6 +159,7 @@ void AABCharacter::ClickedLeft()
 {
 	if (nullptr != CurrentWeapon)
 	{
+		if(ABAnim->GetIs)
 		// Weapon socket "Muzzle" 기준 라인트레이스 실행
 		FVector WeaponTraceStart = CurrentWeapon->Weapon->GetSocketLocation(TEXT("Muzzle"));
 		FVector WeaponTraceEnd = WeaponTraceStart + (CurrentWeapon->Weapon->GetSocketRotation(TEXT("Muzzle")).Vector() * 2000.0f);

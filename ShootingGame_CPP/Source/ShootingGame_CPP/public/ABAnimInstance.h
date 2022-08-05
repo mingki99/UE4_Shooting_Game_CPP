@@ -31,6 +31,8 @@ public:
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
 	float fMoveRightValueY;
 
+	bool GetIsInAir();
+
 private:
 	
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = Locomotion, Meta = (AllowPrivateAccess = true))
