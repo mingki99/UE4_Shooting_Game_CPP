@@ -50,7 +50,8 @@ private:
 
 	void LookUp(float NewAxisValue);
 	void Turn(float NewAxisValue);
-
+	
+	UFUNCTION(BlueprintCallable)
 	void ClickedLeft();
 
 	void SpawnGunWeapon(class Aweapon* Weapon);
