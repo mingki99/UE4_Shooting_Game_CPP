@@ -31,3 +31,8 @@ void UABAnimInstance::SetEquip(bool IsEquip)
 {
 	bIsEquip = IsEquip;
 }
+
+bool UABAnimInstance::GetIsInAir()
+{
+	return bIsInAir;
+}
